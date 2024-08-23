@@ -6,14 +6,45 @@ body{
 }
 header{
     background-color: white;
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322);
     box-sizing: border-box;
     position: sticky; top:0;
     z-index: 999;
     height: 75px;
     display: flex; flex-direction: row; align-items: center;
+    margin-bottom: 20px;
 }
 
 header img{
     width: 90px;
+    margin-left: 20px; margin-right: 20px;
+}
+
+header a{
+    margin: 5px;
+}
+
+h1{
+    font-family: "New Amsterdam", sans-serif; font-weight: bold;
+    font-style: normal; font-size: 40px;
+    color: rgb(15, 20, 90);
+}
+
+p{
     margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+    margin-left: 20px;
+    font-family: "New Amsterdam", sans-serif; font-weight: bold;
+    font-style: normal; font-size: 40px;
+    color: rgb(22, 22, 22);
+}
+
+h3{
+    margin-left: 20px;
+    font-family: "New Amsterdam", sans-serif; font-weight: bold;
+    font-style: normal; font-size: 30px;
+    color: rgb(0, 0, 0);
 }
