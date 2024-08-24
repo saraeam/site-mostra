@@ -1,11 +1,21 @@
 *{
     margin: 0;
 }
+
+body, html { /* Evitar que a pagina aumente pro lado */
+    overflow-x: hidden; 
+    height: 100%;
+}
+
 body{
-    background-color: rgb(194, 194, 194);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    background-image: linear-gradient(180deg, #050d13, #010a0f );
+    background-repeat: no-repeat;
 }
 header{
-    background-color: white;
+    background-color: #00386a;
     box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322);
     box-sizing: border-box;
     position: sticky; top:0;
@@ -22,29 +32,123 @@ header img{
 
 header a{
     margin: 5px;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 h1{
-    font-family: "New Amsterdam", sans-serif; font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
     font-style: normal; font-size: 40px;
-    color: rgb(15, 20, 90);
+    color: #ffffff;
 }
 
 p{
+
+    font-family: "Anek Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;  font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: 22px; /*Pensar em tamanho legal pra qlr pessoa conseguir ver de boa*/
+
+    color: rgb(255, 255, 255);
     margin-left: 20px;
-    font-family: 'Courier New', Courier, monospace;
+
 }
 
 h2{
     margin-left: 20px;
-    font-family: "New Amsterdam", sans-serif; font-weight: bold;
-    font-style: normal; font-size: 40px;
-    color: rgb(22, 22, 22);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(90deg, rgb(0, 0, 185), rgba(99, 101, 223, 0.267), rgba(255, 255, 255, 0));
+    padding-left: 5px;
+    border-radius: 8px;
 }
 
 h3{
     margin-left: 20px;
     font-family: "New Amsterdam", sans-serif; font-weight: bold;
     font-style: normal; font-size: 30px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    clear: both;
+}
+
+.Box-Bem-Vindo{
+    border: #ffffff2d solid 1px; border-radius: 5px;
+    background-color:#0e1922;
+    
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
+    padding: 10px;
+    display: flex; flex-direction: column; align-items: center;
+    width: 800px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin: auto;
+    
+}
+
+.Box-Bem-Vindo p{
+    text-align: center; /*O texto no centro n pode ser longo igual esta agora*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.Box-Bem-Vindo img:hover{
+    height: 400px;
+    width: 620px;
+    filter: brightness(80%); 
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
+}
+
+.Box-Bem-Vindo img{
+    border-radius: 5px;
+    height: 380px;
+    width: 600px;
+    filter: brightness(50%); /*img um pouco mais escura*/
+    transition: 500ms ease-in-out;
+}
+
+.imagem-info{
+    float: right;
+    margin-right: 30px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+}
+
+.caixinhas-box-principal{
+    display: flex; flex-direction: row; justify-content: center;
+    clear: both;
+
+}
+
+.caixinha-img-textinho{
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border: #ffffff2d solid 1px; border-radius: 8px;
+    background-color:#0e1922;
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
+    margin: 15px;
+    
+}
+.caixinha-img-textinho img{
+    border: #ffffff79 solid 2px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    transition: 500ms ease-in-out;
+}
+
+.caixinha-img-textinho img:hover{
+    border: #ffffff79 solid 5px;
+    width: 250px;
+    height: 250px;
 }
