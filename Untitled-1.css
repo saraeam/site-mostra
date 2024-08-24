@@ -7,6 +7,11 @@ body, html { /* Evitar que a pagina aumente pro lado */
     height: 100%;
 }
 
+::selection {
+    color: rgb(255, 255, 255);
+    background-color: purple;
+}
+
 body{
     background-size: cover;
     background-position: center;
@@ -31,9 +36,24 @@ header img{
 }
 
 header a{
+    font-family: "Anek Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;  font-style: normal;
+    font-variation-settings: "wdth" 100;
+
     margin: 5px;
+    margin-left: 15px;
     color: #ffffff;
     text-decoration: none;
+    border: #ffffff44 1px solid; border-radius: 5px; 
+    padding: 7px;
+}
+
+header a:hover{
+    color: #0f1c92;
+    font-weight: bold;
+    background-color: #ffffff;
+
 }
 
 h1{
@@ -43,6 +63,7 @@ h1{
     font-style: normal;
     font-style: normal; font-size: 40px;
     color: #ffffff;
+    animation: titulos 2s ease-in-out alternate;
 }
 
 p{
@@ -67,9 +88,12 @@ h2{
     font-style: normal;
     font-size: 40px;
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(90deg, rgb(0, 0, 185), rgba(99, 101, 223, 0.267), rgba(255, 255, 255, 0));
-    padding-left: 5px;
     border-radius: 8px;
+    transition: 500ms ease-in-out;
+}
+
+h2:hover{
+    font-size: 45px;
 }
 
 h3{
@@ -78,6 +102,15 @@ h3{
     font-style: normal; font-size: 30px;
     color: rgb(255, 255, 255);
     clear: both;
+    animation: titulos 2s ease-in-out alternate;
+}
+
+video{
+    border-radius: 10px;
+    width: 400px;
+    float: right;
+    margin: 15px;
+    border: rgba(255, 255, 255, 0.507) 2px solid;
 }
 
 .Box-Bem-Vindo{
@@ -88,9 +121,10 @@ h3{
     padding: 10px;
     display: flex; flex-direction: column; align-items: center;
     width: 800px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-top: auto;
     
 }
 
@@ -116,11 +150,22 @@ h3{
 }
 
 .imagem-info{
-    float: right;
-    margin-right: 30px;
     margin: 10px;
     width: 30%;
+    border: rgba(255, 255, 255, 0.507) 2px solid;
     border-radius: 10px;
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
+}
+
+.imagem-info:nth-child(2n){
+    float: left;
+    margin-left: 30px;
+    margin-left: 15px;
+}
+
+.imagem-info:nth-child(2n+1){
+    float: right;
+    margin-right: 30px;
 }
 
 .caixinhas-box-principal{
@@ -151,4 +196,9 @@ h3{
     border: #ffffff79 solid 5px;
     width: 250px;
     height: 250px;
+}
+
+@keyframes titulos{
+    0%{font-size: 30px; }
+    100%{font-size: 40px;}
 }
