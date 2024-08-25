@@ -63,7 +63,6 @@ h1{
     font-style: normal;
     font-style: normal; font-size: 40px;
     color: #ffffff;
-    animation: titulos 2s ease-in-out alternate;
 }
 
 p{
@@ -77,6 +76,15 @@ p{
 
     color: rgb(255, 255, 255);
     margin-left: 20px;
+}
+
+p a{
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: rgb(0, 47, 255); 
+    border-radius: 8px;
+    padding: 4px;
 }
 
 .amarelo{
@@ -162,22 +170,11 @@ video{
 }
 
 .imagem-info{
+    float: right;
     margin: 10px;
     width: 30%;
-    border: rgba(255, 255, 255, 0.507) 2px solid;
     border-radius: 10px;
     box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
-}
-
-.imagem-info:nth-child(2n){
-    float: left;
-    margin-left: 30px;
-    margin-left: 15px;
-}
-
-.imagem-info:nth-child(2n+1){
-    float: right;
-    margin-right: 30px;
 }
 
 .caixinhas-box-principal{
@@ -197,7 +194,7 @@ video{
     
 }
 .caixinha-img-textinho img{
-    border: #00fff279 solid 2px;
+    border: #ffffff25 solid 2px;
     border-radius: 50%;
     width: 200px;
     height: 200px;
