@@ -111,6 +111,11 @@ h2{
     transition: 500ms ease-in-out;
 }
 
+.caixinha-img-textinho h2{
+    margin-left: 0;
+}
+
+
 h2:hover{
     font-size: 45px;
 }
