@@ -216,6 +216,25 @@ video{
     height: 250px;
 }
 
+.codigo-qr{
+    display: block;
+    margin: auto;
+    width: 15%;
+} 
+
+details{
+    /*BOTA A MSM FONTE DO H2*/
+    font-size: 30px;
+    color: #dbe91d;
+    border: #ffffff2d solid 1px; border-radius: 8px;
+    background-color:#131c27;
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
+    padding: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+
+}
+
 @keyframes titulos{
     0%{font-size: 30px; }
     100%{font-size: 40px;}
