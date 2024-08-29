@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-body, html { /* Evitar que a pagina aumente pro lado */
+body, html {
     overflow-x: hidden; 
     height: 100%;
 }
@@ -225,14 +225,36 @@ video{
 details{
     font-family: 'Montserrat';
     font-size: 30px;
-    color: #dbe91d;
-    border: #ffffff2d solid 1px; border-radius: 8px;
-    background-color:#131c27;
+    color:#030c13;
+    border: #ffffff8e solid 1px; border-radius: 5px;
+    background-color:#8ba6c7;
     box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.322); 
     padding: 10px;
     margin-right: 50px;
     margin-left: 50px;
+    margin-bottom: 5px;
+}
 
+details:hover{
+    color: #8ba6c7;
+    border:  solid 1px; border-radius: 5px;
+    background-color:#030c13;
+}
+
+.code{
+    background-color: #111111;
+    border:  rgba(255, 255, 255, 0.144) solid 1px; border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+
+}
+
+.code p{
+    color: greenyellow;
+    font-size: 15px;
 }
 
 @keyframes titulos{
@@ -257,4 +279,63 @@ details{
 @font-face {
     font-family: 'Montserrat Thin';
     src: url('fonts/Montserrat/static/Montserrat-Thin.ttf') format('truetype');
+}
+
+.zelda{
+    margin-top: 100px;
+    width: 10%;
+    position: absolute;
+    transition: transform 0.2s;
+}
+
+.container {
+    display: block;
+    width: 200px;
+}
+
+.block {
+    position: absolute;
+}
+
+.block img{
+    width: 95px;
+}
+
+.block.blue {
+    scale: -90deg;
+    transform: scaleX(-1);
+    animation: moveLeftToRight 10s linear infinite;
+}
+
+.block.red {
+    right: 0;
+    animation: moveRightToLeft 14s linear infinite;
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: calc(100vw - 100px); /* Considera a largura do bloco */
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes moveRightToLeft {
+    0% {
+        right: 0;
+    }
+    50% {
+        right: calc(100vw - 100px); /* Considera a largura do bloco */
+    }
+    100% {
+        right: 0;
+    }
+}
+
+.fim-de-pag{
+    display: block;
 }

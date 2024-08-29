@@ -31,3 +31,315 @@
         <a href="Experiencias.html">Experiencia</a>
 
     </header>
+
+    <h2>Coisinhas legais em C:</h2>
+
+
+    <details>
+        <summary>JOGUINHO DE 4P0STA? (KK)</summary>
+        
+        <article class="code">
+        
+            <p>
+    
+                #include &lt;stdio.h&gt;<br>
+    #include &lt;stdlib.h&gt;<br>
+    #include &lt;time.h&gt;<br><br>
+    
+    #ifdef _WIN32<br>
+        #define CLEAR "cls"<br>
+    #else<br>
+        #define CLEAR "clear"<br>
+    #endif<br><br>
+    
+    void jogoModo1() {<br>
+        int min, max, numeroEscolhido, numeroUsuario;<br>
+        char continuar;<br><br>
+    
+        srand(time(0));<br><br>
+    
+        do {<br>
+            printf("Digite o valor mínimo da faixa: ");<br>
+            scanf("%d", &min);<br>
+            printf("Digite o valor máximo da faixa: ");<br>
+            scanf("%d", &max);<br><br>
+    
+            numeroEscolhido = (rand() % (max - min + 1)) + min;<br><br>
+    
+            printf("Tente adivinhar o número entre %d e %d: ", min, max);<br>
+            scanf("%d", &numeroUsuario);<br><br>
+    
+            if (numeroUsuario == numeroEscolhido) {<br>
+                printf("Parabéns! Você acertou!\n");<br>
+            } else {<br>
+                printf("Que pena! O número correto era %d.\n", numeroEscolhido);<br>
+            }<br><br>
+    
+            printf("Deseja jogar novamente? (s/n): ");<br>
+            scanf(" %c", &continuar);<br><br>
+    
+            system(CLEAR);<br>
+        } while (continuar == 's' || continuar == 'S');<br>
+    }<br><br>
+    
+    void jogoModo2() {<br>
+        int numeroEscolhido, numeroUsuario;<br>
+        float dinheiro = 100.00;<br><br>
+    
+        srand(time(0));<br><br>
+    
+        while (dinheiro >= 10.00) {<br>
+            numeroEscolhido = (rand() % 50) + 1;<br><br>
+    
+            printf("Você tem %.2f reais.\n", dinheiro);<br>
+            printf("Escolha um número entre 1 e 50: ");<br>
+            scanf("%d", &numeroUsuario);<br><br>
+    
+            dinheiro -= 10.00;<br><br>
+    
+            if (numeroUsuario == numeroEscolhido) {<br>
+                printf("Parabéns! Você acertou!\n");<br>
+                dinheiro += 15.00;<br>
+            } else {<br>
+                printf("Que pena! O número correto era %d.\n", numeroEscolhido);<br>
+            }<br><br>
+    
+            if (dinheiro < 10.00) {<br>
+                printf("Você ficou sem dinheiro suficiente para continuar.\n");<br>
+            }<br><br>
+    
+            printf("Pressione Enter para continuar...\n");<br>
+            getchar();<br>
+            getchar();<br><br>
+    
+            system(CLEAR);<br>
+        }<br><br>
+    
+        printf("Fim de jogo. Você terminou com %.2f reais.\n", dinheiro);<br>
+    }<br><br>
+    
+    int main() {<br>
+        int escolha;<br><br>
+    
+        printf("Escolha o modo de jogo:\n");<br>
+        printf("1. Adivinhar Número\n");<br>
+        printf("2. CASSINO SIMULATOR \n");<br>
+        scanf("%d", &escolha);<br><br>
+    
+        switch (escolha) {<br>
+            case 1:<br>
+                jogoModo1();<br>
+                break;<br>
+            case 2:<br>
+                jogoModo2();<br>
+                break;<br>
+            default:<br>
+                printf("Opção inválida!\n");<br>
+                break;<br>
+        }<br><br>
+    
+        return 0;<br>
+    }
+    
+            </p>
+        </article>
+    </details>
+
+
+    <details>
+        <summary>LOTERIA FÁCIL FÁCIL!!! </summary>
+        <p class="code">
+
+            #include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#include &lt;time.h&gt;<br><br>
+
+#define NUMEROS 6<br>
+#define LIMITE 50<br><br>
+
+#ifdef _WIN32<br>
+#define CLEAR "cls"<br>
+#else<br>
+#define CLEAR "clear"<br>
+#endif<br><br>
+
+void lerNumerosUsuario(int numerosUsuario[]) {<br>
+    printf("Escolha %d números entre 1 e %d:\n", NUMEROS, LIMITE);<br>
+    for (int i = 0; i &lt; NUMEROS; i++) {<br>
+        printf("Número %d: ", i + 1);<br>
+        scanf("%d", &numerosUsuario[i]);<br>
+    }<br>
+}<br><br>
+
+void gerarNumerosAleatorios(int numerosSorteados[]) {<br>
+    for (int i = 0; i &lt; NUMEROS; i++) {<br>
+        numerosSorteados[i] = (rand() % LIMITE) + 1;<br>
+    }<br>
+}<br><br>
+
+int verificarAcertos(int numerosUsuario[], int numerosSorteados[]) {<br>
+    int acertos = 0;<br>
+    for (int i = 0; i &lt; NUMEROS; i++) {<br>
+        for (int j = 0; j &lt; NUMEROS; j++) {<br>
+            if (numerosUsuario[i] == numerosSorteados[j]) {<br>
+                acertos++;<br>
+                break;<br>
+            }<br>
+        }<br>
+    }<br>
+    return acertos;<br>
+}<br><br>
+
+void exibirNumeros(const char *descricao, int numeros[]) {<br>
+    printf("%s: ", descricao);<br>
+    for (int i = 0; i &lt; NUMEROS; i++) {<br>
+        printf("%d ", numeros[i]);<br>
+    }<br>
+    printf("\n");<br>
+}<br><br>
+
+int main() {<br>
+    int numerosUsuario[NUMEROS];<br>
+    int numerosSorteados[NUMEROS];<br>
+    int acertos;<br>
+    char jogarNovamente;<br><br>
+
+    srand(time(0));<br><br>
+
+    do {<br>
+        lerNumerosUsuario(numerosUsuario);<br>
+        gerarNumerosAleatorios(numerosSorteados);<br><br>
+
+        exibirNumeros("Seus números", numerosUsuario);<br>
+        exibirNumeros("Números sorteados", numerosSorteados);<br><br>
+
+        acertos = verificarAcertos(numerosUsuario, numerosSorteados);<br><br>
+
+        if (acertos == NUMEROS) {<br>
+            printf("Parabéns! Você acertou todos os números!\n");<br>
+        } else {<br>
+            printf("Você acertou %d número(s). Tente novamente!\n", acertos);<br>
+        }<br><br>
+
+        printf("Deseja jogar novamente? (s/n): ");<br>
+        scanf(" %c", &jogarNovamente);<br><br>
+
+        system(CLEAR);<br>
+
+    } while (jogarNovamente == 's' || jogarNovamente == 'S');<br><br>
+
+    return 0;<br>
+}
+
+        </p>
+    </details>
+    
+    <h2>Coisinhas legais em Web: </h2>
+
+    <img class="zelda" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ddabef1-8390-424a-a828-f61e4df3d499/das5p99-4a954d14-181e-4b65-90b9-f91b2743c104.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkZGFiZWYxLTgzOTAtNDI0YS1hODI4LWY2MWU0ZGYzZDQ5OVwvZGFzNXA5OS00YTk1NGQxNC0xODFlLTRiNjUtOTBiOS1mOTFiMjc0M2MxMDQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zPXqndj32dAPQv3KxZ0H24pK7wcJoIJ_63CfyUt5kuc">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const object = document.querySelector(".zelda");
+            let positionX = 0;
+            let velocityX = 0;
+            const accelerationX = 0.5;
+            const maxSpeed = 5;
+            const jumpHeight = 100;
+            let isJumping = false;
+            let velocityY = 0;
+            const gravity = 0.8;
+            let groundLevel = parseInt(object.style.top);
+        
+            function updatePosition() {
+                // Atualiza a posição X
+                positionX += velocityX;
+                if (positionX < 0) positionX = 0;
+                if (positionX > window.innerWidth - object.clientWidth) {
+                    positionX = window.innerWidth - object.clientWidth;
+                }
+                object.style.left = positionX + "px";
+        
+                // Aplica a inversão horizontal se o objeto estiver se movendo para a esquerda
+                if (velocityX < 0) {
+                    object.style.transform = "scaleX(-1)";
+                } else if (velocityX > 0) {
+                    object.style.transform = "scaleX(1)";
+                }
+        
+                // Atualiza a posição Y (gravidade)
+                if (isJumping) {
+                    velocityY += gravity;
+                    object.style.top = parseInt(object.style.top) + velocityY + "px";
+        
+                    if (parseInt(object.style.top) >= groundLevel) {
+                        object.style.top = groundLevel + "px";
+                        isJumping = false;
+                        velocityY = 0;
+                    }
+                }
+            }
+        
+            function controlObject(event) {
+                switch (event.key) {
+                    case "ArrowLeft":
+                        velocityX = -maxSpeed;
+                        break;
+                    case "ArrowRight":
+                        velocityX = maxSpeed;
+                        break;
+                    case " ":
+                        if (!isJumping) {
+                            isJumping = true;
+                            velocityY = -15; // Velocidade inicial do pulo
+                        }
+                        break;
+                }
+            }
+        
+            function stopMovement(event) {
+                if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                    velocityX = 0;
+                }
+            }
+        
+            document.addEventListener("keydown", controlObject);
+            document.addEventListener("keyup", stopMovement);
+        
+            setInterval(updatePosition, 20);
+        });
+        </script>
+
+
+    <div class="container">
+        <div class="block blue"> 
+
+            <img src="https://static.wikia.nocookie.net/minecraft_br_gamepedia/images/0/09/Bat.gif/revision/latest/thumbnail/width/360/height/360?cb=20170704231153">
+        </div>
+
+        <div class="block red">
+            <img src="https://static.wikia.nocookie.net/grandchase/images/3/34/Morcego_Demon%C3%ADaco_Furioso_-_Anima%C3%A7%C3%A3o.gif/revision/latest?cb=20230408011947&path-prefix=pt-br">
+
+        </div>
+    </div>
+
+
+    <section class="fim-de-pag">
+        <div class="caixinha-img-textinho">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png">
+            <h2>JavaScript</h2>
+        </div>
+
+        <div class="caixinha-img-textinho">
+            <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png">
+            <h2>HTML 5</h2>
+        </div>
+
+        <div class="caixinha-img-textinho">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png">
+            <h2>CSS</h2>
+        </div>
+    </section>
+
+    </body>
+</html>
